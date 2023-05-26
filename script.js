@@ -22,17 +22,19 @@
 //     let pozicijaAt = value.indexOf("@");
 //     let pozicijaTacka = value.indexOf("."); //pokazuje poziciju . u reci koju pisemo
 
-//     console.log(pozicijaAt, pozicijaTacka);
-//     let izmedjuAtTacka = value.substring(pozicijaAt + 1, pozicijaTacka); // pokazuje nam sta je izmedju @ i tacke
-
-//     console.log(typeof izmedjuAtTacka.lenght);
-//     console.log(izmedjuAtTacka.lenght);
-//     if (izmedjuAtTacka.lenght > 0) {
-//       console.log("Dobro je");
+//     if (pozicijaTacka - pozicijaAt > 1) {
+//       return true; // Valid email
+//       console.log("Valid email");
 //     } else {
-//       console.log("nije dobro");
-//     }
-//   } else {
-//     console.log("Mail nije validan");
+//       false;
+//       console.log("Unvalid email");
+//     } // Invalid email
 //   }
 // }
+
+function addToCart(element) {
+  let mainEl = element.closest(".single-item");
+  let price = mainEl.querySelector(".price").innerText;
+  // let input = element.previousElementSibling;
+  console.log(price);
+}

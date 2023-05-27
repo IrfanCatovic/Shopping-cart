@@ -32,9 +32,31 @@
 //   }
 // }
 
+//I can use this function on every button bcs of action onClick(this) - it sends informations of div where button is clicked
+//
 function addToCart(element) {
   let mainEl = element.closest(".single-item");
   let price = mainEl.querySelector(".price").innerText;
+  let name = mainEl.querySelector("h3").innerText;
+  let kol = mainEl.querySelector("input").value;
+  let cartItems = document.querySelector(".cart-items");
+
+  if (parseInt(kol) > 0) {
+    price = price.substring(1);
+    price = parseInt(price);
+
+    let total = price * parseInt(kol);
+
+    cartItems.innerHTML += `prizvod: ${name} -
+    cijena: ${price} -
+    Količina ${kol}
+    Total: ${total}`;
+
+    element.innerText = "Dodato";
+    element.setAttribute("disabled", "true");
+  } else {
+    alert("Odaberi kolicinu");
+  }
+
   // let input = element.previousElementSibling;
-  console.log(price);
 }

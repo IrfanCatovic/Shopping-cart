@@ -1,12 +1,14 @@
 body {
-  background-color: #e50914;
+  background-color: #141414;
+  margin-top: 100px;
+  margin-left: 20px;
 }
 .card {
   width: 300px;
-  border: 1px solid #ccc;
+  border: 1px solid #79a76e;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(255, 175, 175, 0.1);
+  background-color: #272825;
   overflow: hidden;
   position: relative;
 
@@ -30,17 +32,12 @@ body {
 .card-content h3 {
   font-size: 20px;
   margin: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
+  color: white;
 }
 
 .card-content p {
   margin: 10px 0;
+  color: white;
 }
 .card-content .btn {
   display: inline-block;

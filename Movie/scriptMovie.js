@@ -36,6 +36,10 @@ function removeMovie(element) {
 
   allTotal -= price;
 
+  element.remove();
+
   let zaokruzena = allTotal.toFixed(2);
   document.querySelector(".total-price").innerText = `$ ${zaokruzena}`;
+
+  element.innerText = "Watch";
 }

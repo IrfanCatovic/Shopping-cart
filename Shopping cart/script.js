@@ -68,27 +68,27 @@ function addToCart(element) {
     alert("Odaberi kolicinu");
   }
 
-  function removeFromCart(element) {
-    let mainEl = element.closest(".cart-single-item");
-    let price = mainEl.querySelector("p span").innerText;
-    let name = mainEl.querySelector("h3").innerText;
-    let povrce = document.querySelectorAll(".single-item");
-
-    price = parseInt(price);
-    allTotal -= price;
-
-    document.querySelector(".total").innerText = `Total: $${allTotal}`;
-
-    mainEl.remove();
-
-    povrce.forEach(function (vege) {
-      let itemName = vege.querySelector(".si-content h3").innerText;
-      if (itemName === name) {
-        vege.querySelector(".actions input").value = 0;
-        vege.querySelector(".actions button").removeAttribute(".disabled");
-        vege.querySelector(".actions button").innerText = "Dodaj";
-      }
-    });
-  }
   // let input = element.previousElementSibling;
+}
+function removeFromCart(element) {
+  let mainEl = element.closest(".cart-single-item");
+  let price = mainEl.querySelector("p span").innerText;
+  let name = mainEl.querySelector("h3").innerText;
+  let povrce = document.querySelectorAll(".single-item");
+
+  price = parseInt(price);
+  allTotal -= price;
+
+  document.querySelector(".total").innerText = `Total: $${allTotal}`;
+
+  mainEl.remove();
+
+  povrce.forEach(function (vege) {
+    let itemName = vege.querySelector(".si-content h3").innerText;
+    if (itemName === name) {
+      vege.querySelector(".actions input").value = 0;
+      vege.querySelector(".actions button").removeAttribute(".disabled");
+      vege.querySelector(".actions button").innerText = "Dodaj";
+    }
+  });
 }

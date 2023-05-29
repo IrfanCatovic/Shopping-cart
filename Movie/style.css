@@ -3,6 +3,11 @@ body {
   margin-top: 100px;
   margin-left: 20px;
 }
+.card-container {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
+}
+
 .card {
   width: 300px;
   border: 1px solid #79a76e;
@@ -11,6 +16,7 @@ body {
   background-color: #272825;
   overflow: hidden;
   position: relative;
+  width: 300px;
 
   display: flex;
   flex-direction: column;
@@ -22,7 +28,7 @@ body {
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 200px;
 }
 
 .card-content {
@@ -37,6 +43,11 @@ body {
 
 .card-content p {
   margin: 10px 0;
+  max-width: 250px;
+  max-height: 90px;
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: pre-line;
   color: white;
 }
 .card-content .btn {

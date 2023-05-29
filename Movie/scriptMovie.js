@@ -16,16 +16,26 @@ function gledao(element) {
   element.innerText = "Watched";
   element.style.backgroundColor = "green";
   element.style.color = "white";
-  element.setAttribute("disabled", "true");
+  element.setAttribute("disable", "true");
 
+  element.disabled = true;
   mainEl.innerHTML += `
-
+  
   <div class=".cnt-rmv"> 
 
-    <button onclick="removeMovie(this)" class=".btn-rmv">Remove</button>
+    <button onclick="removeMovie(this)" class="btn-rmv">Remove</button>
   </div>`;
 }
 
 function removeMovie(element) {
-  console.log("Remove");
+  let mainEl = element.closest(".card");
+  let price = mainEl.querySelector(".card-price").innerText;
+
+  price = price.substring(8);
+  price = parseFloat(price);
+
+  allTotal -= price;
+
+  let zaokruzena = allTotal.toFixed(2);
+  document.querySelector(".total-price").innerText = `$ ${zaokruzena}`;
 }

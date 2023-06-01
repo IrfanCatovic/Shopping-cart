@@ -6,7 +6,6 @@
 
 // btns.forEach(function(btn){
 
-
 //     //event listener koji ceka za svaki klik, za svaki button
 //     btn.addEventListener("click", function(event){
 //         let clicked_btn = event.target;
@@ -27,11 +26,10 @@
 // let form = document.querySelector('form');
 
 // form.addEventListener('submit', (event) => {
-    
+
 //     event.preventDefault();
 
 //     console.log('test');
-
 
 // });
 
@@ -52,3 +50,13 @@
 //     }
 // });
 
+window.addEventListener("keydown", (event) => {
+  let code = event.keyCode;
+  let keyElement = document.querySelector(`div[data-key="${code}"]`);
+
+  if (!keyElement) return; //da prekinemo izvrsavanje ovog addeventlistener
+
+  let audio = document.querySelector(`audio[data-key="${code}"]`);
+  audio.ariaCurrentTime = 0; //kad god pritisnemo vracamo ga na 0, ponovo jer inace nece da ucita 2x brzo
+  audio.play();
+});
